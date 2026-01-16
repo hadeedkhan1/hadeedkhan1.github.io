@@ -73,3 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
     renderProjects();
     renderExperience();
 });
+var menuBtn = document.getElementById('menu-btn');
+var mobileMenu = document.getElementById('mobile-menu');
+menuBtn === null || menuBtn === void 0 ? void 0 : menuBtn.addEventListener('click', function () {
+    mobileMenu === null || mobileMenu === void 0 ? void 0 : mobileMenu.classList.toggle('hidden');
+});
