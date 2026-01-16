@@ -1,0 +1,10 @@
+.app {
+	height: 100vh;
+  width: 100vw;
+
+  cursor: url(cursors/neo-nyan-cursor.png), auto;
+}
+
+.app button {
+  cursor: url(cursors/neo-nyan-pointer.png), auto;
+}
