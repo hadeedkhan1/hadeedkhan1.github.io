@@ -46,7 +46,7 @@ const experience: Project[] = [
         link: "https://reliablyme.com"
     },
        {
-        title: "Founder and CEO | Academix Tutors (2023-2026)",
+        title: "Founder and CEO | Academix Tutors (2023-Present)",
         description: "",
         tags: ["Math", "Physics", "Database", "Google Apps Scripts"],
         link: "https://academixtutors.com"
@@ -59,7 +59,7 @@ const experience: Project[] = [
     }
     ,
            {
-        title: "Coach + Admin | FTC Robotics #31675/#27859 (2024-2026)",
+        title: "Coach + Admin | FTC Robotics #31675/#27859 (2024-Present)",
         description: "",
         tags: ["Path Planning", "Computer Vision", "Mentorship"],
         link: "https://icbcrobotics.org/"
@@ -100,7 +100,6 @@ function renderProjects() {
         </div>
     `).join('');
 }
-document.addEventListener('DOMContentLoaded', renderProjects);
 
 //other thing now
 
@@ -109,7 +108,7 @@ function renderExperience() {
     if (!grid) return;
 
     grid.innerHTML = experience.map(job => `
-        <div class="relative flex flex-col p-8 rounded-2xl overflow-hidden transition-all duration-300 group bg-white/40 backdrop-blur-md border border-white/50 shadow-sm hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1">
+        <div class="relative flex flex-col p-8 rounded-2xl overflow-hidden transition-all duration-300 group bg-white/40 backdrop-blur-md border border-white/50 shadow-sm hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
             
             <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none z-0"></span>
 
@@ -123,7 +122,7 @@ function renderExperience() {
                 
                 <div class="flex flex-wrap gap-2 mb-6">
                     ${job.tags.map(tag => `
-                        <span class="bg-white/60 text-[#0C343D] border border-[#0C343D]/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide">
+                        <span class="bg-[#DDFFCF] text-[#56833F] border border-[#0C343D]/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide">
                             ${tag}
                         </span>
                     `).join('')}
@@ -138,9 +137,6 @@ function renderExperience() {
     `).join('');
 }
 
-// UPDATE THE EVENT LISTENER AT THE VERY BOTTOM
-// Remove your old line: document.addEventListener('DOMContentLoaded', renderProjects);
-// Replace it with this:
 
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
