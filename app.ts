@@ -72,27 +72,18 @@ function renderProjects() {
     if (!grid) return;
 
     grid.innerHTML = projects.map(project => `
-        <div class="relative flex flex-col p-8 rounded-2xl overflow-hidden transition-all duration-300 group bg-white/40 backdrop-blur-md border border-white/50 shadow-sm hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-            
-            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none z-0"></span>
+        <div class="relative flex flex-col p-8 overflow-hidden transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(103,178,216,0.3)]">
+            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/80 dark:via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
 
             <div class="relative z-10 flex flex-col h-full">
-                
-                <h3 class="text-[#0C343D] text-2xl font-bold mb-3">${project.title}</h3>
-                
-                <p class="text-[#0C343D] mb-6 leading-relaxed flex-grow font-medium opacity-90">
-                    ${project.description}
-                </p>
-                
+                <h3 class="text-[#0C343D] dark:text-white text-2xl font-bold mb-3">${project.title}</h3>
+                <p class="text-[#0C343D] dark:text-stone-300 mb-6 leading-relaxed flex-grow font-medium opacity-90">${project.description}</p>
                 <div class="flex flex-wrap gap-2 mb-6">
                     ${project.tags.map(tag => `
-                        <span class="bg-[#DDFFCF] text-[#56833F] border border-[#0C343D]/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide">
-                            ${tag}
-                        </span>
+                        <span class="bg-white/40 dark:bg-white/10 text-[#6BAB4F] dark:text-[#67B2D8] border border-white/60 dark:border-white/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide">${tag}</span>
                     `).join('')}
                 </div>
-                
-                <a href="${project.link}" target="_blank" class="inline-flex items-center text-[#0C343D] font-extrabold hover:text-[#6BAB4F] transition-colors mt-auto">
+                <a href="${project.link}" target="_blank" class="inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#67B2D8] transition-colors mt-auto">
                     View Project 
                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
@@ -101,34 +92,25 @@ function renderProjects() {
     `).join('');
 }
 
-//other thing now
-
 function renderExperience() {
     const grid = document.getElementById('experience-grid');
     if (!grid) return;
 
     grid.innerHTML = experience.map(job => `
-        <div class="relative flex flex-col p-8 rounded-2xl overflow-hidden transition-all duration-300 group bg-white/40 backdrop-blur-md border border-white/50 shadow-sm hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-            
-            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none z-0"></span>
+        <div class="relative flex flex-col p-8 overflow-hidden transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(103,178,216,0.3)]">
+            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/80 dark:via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
 
             <div class="relative z-10 flex flex-col h-full">
-                
-                <h3 class="text-[#0C343D] text-2xl font-bold mb-3">${job.title}</h3>
-                
-                <p class="text-[#0C343D] mb-6 leading-relaxed flex-grow font-medium opacity-90">
-                    ${job.description}
-                </p>
-                
+                <h3 class="text-[#0C343D] dark:text-white text-2xl font-bold mb-3">${job.title}</h3>
+                <p class="text-[#0C343D] dark:text-stone-300 mb-6 leading-relaxed flex-grow font-medium opacity-90">${job.description}</p>
                 <div class="flex flex-wrap gap-2 mb-6">
                     ${job.tags.map(tag => `
-                        <span class="bg-[#DDFFCF] text-[#56833F] border border-[#0C343D]/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide">
-                            ${tag}
-                        </span>
+                        <span class="bg-white/40 dark:bg-white/10 text-[#6BAB4F] dark:text-[#67B2D8] border border-white/60 dark:border-white/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide">${tag}</span>
                     `).join('')}
+
+
                 </div>
-                
-                <a href="${job.link}" target="_blank" class="inline-flex items-center text-[#0C343D] font-extrabold hover:text-[#6BAB4F] transition-colors mt-auto">
+                <a href="${job.link}" target="_blank" class="inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#67B2D8] transition-colors mt-auto">
                     View Details 
                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
@@ -137,14 +119,27 @@ function renderExperience() {
     `).join('');
 }
 
+function setupDarkMode() {
+    const btn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    if (localStorage.getItem('theme') === 'dark') html.classList.add('dark');
+
+    btn?.addEventListener('click', () => {
+        const isDark = html.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        const txt = document.getElementById('theme-text');
+        if (txt) txt.innerText = isDark ? 'Light' : 'Dark';
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     renderExperience();
-});
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
+    setupDarkMode();
 
-menuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+    });
 });
