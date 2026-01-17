@@ -83,7 +83,7 @@ function renderProjects() {
                         <span class="bg-white/40 dark:bg-white/10 text-[#6BAB4F] dark:text-[#67B2D8] border border-white/60 dark:border-white/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide">${tag}</span>
                     `).join('')}
                 </div>
-                <a href="${project.link}" target="_blank" class="inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#67B2D8] transition-colors mt-auto">
+                <a href="${project.link}" target="_blank" class="inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition-colors mt-auto">
                     View Project 
                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
