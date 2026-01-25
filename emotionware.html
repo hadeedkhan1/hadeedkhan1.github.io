@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emotionware | Hadeed Khan</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <script>
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+
+<body class="bg-[#DBC6A5] dark:bg-[#500000] transition-colors duration-500 text-[#0C343D] dark:text-[#DBC6A5] font-sans">
+
+<nav class="sticky top-4 z-50 mx-auto max-w-5xl px-4">
+  <div class="bg-white/[0.4] dark:bg-black/[0.4] backdrop-blur-md border border-white/[0.2] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+    <div class="px-6 py-3 flex justify-between items-center">
+
+      <a href="/" class="text-xl font-bold text-[#0C343D] dark:text-[#DBC6A5]">
+        Hadeed Khan
+      </a>
+
+      <button id="theme-toggle"
+          class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition text-xs font-bold uppercase">
+          <span id="theme-text">Dark</span>
+        </button>
+
+      <div class="flex items-center gap-6">
+        <a href="/#projects"
+           class="text-sm font-medium text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition">
+          ← Projects
+        </a>
+
+        
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<header class="max-w-5xl mx-auto px-6 pt-24 pb-16">
+  <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+    Emotionware
+  </h1>
+
+  <p class="text-xl max-w-3xl mb-8 opacity-90">
+   Smart wearables for Autism (TAMUHACK '26)
+  </p>
+
+  <div class="flex flex-wrap gap-4">
+    <a href="https://github.com/hadeedkhan1/tamuhack_software/tree/main" class="project-btn bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/20 rounded-2xl p-6 h-fit">GitHub</a>
+    <a href="https://hadeedkhan1.github.io/tamuhack_software/" class="project-btn bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/20 rounded-2xl p-6 h-fit">Live Project</a>
+    <a href="https://www.linkedin.com/in/hadeedk/details/projects/" class="project-btn bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/20 rounded-2xl p-6 h-fit">LinkedIn</a>
+  </div>
+</header>
+
+<section class="max-w-6xl mx-auto px-6 pb-20">
+  <div class="grid md:grid-cols-2 gap-6">
+    <img src="project1.png" alt="Project image 1" class="rounded-2xl shadow-lg">
+    <img src="project2.png" alt="Project image 2" class="rounded-2xl shadow-lg">
+  </div>
+</section>
+
+<section class="max-w-5xl mx-auto px-6 pb-32 grid md:grid-cols-3 gap-12">
+
+  <div class="md:col-span-2 space-y-10">
+
+    <div>
+      <h2 class="text-2xl font-bold mb-3">Overview</h2>
+      <p>
+        Our system tracks emotions in real time using a webcam using DeepFace and Presage SDK (which will be Meta RayBans Smart Glasses in the Future), detects and assigns IDs to multiple faces, predicts their emotional state, and logs everything to a CSV. At the end of a session, the system sends the data to Google Gemini via OpenRouter to generate a clear, human-readable summary onto a secure dashboard.
+
+        We also integrated wearable feedback. Using a glove, bracelet, ring, or even a smartwatch, the system can send vibrations corresponding to detected emotions. The feedback is customizable, so it could work in multiple form factors depending on the user’s needs.
+
+        Finally, the web dashboard reads the CSV and displays a live session overview: dominant emotion, stability, and an AI-generated summary. You can even track trends over time, making it a powerful tool for both personal and educational use.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold mb-3">Technical Details</h2>
+      <p>
+        Python, Computer Vision, DeepFace, Presage SDK, Arduino/ESP32, Google Gemini API, OpenRouter, Flask, HTML/CSS/JS, Hardware Soldering, Team Collaboration
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold mb-3">Challenges & Learnings</h2>
+      <p>
+        Interviewing teachers and administrators who work with students with Autism to get their opinion and feedback. 
+        Soldering, assembling, and programming the wearable feedback device.
+        Hackathon- TAMUHACK 26
+      </p>
+    </div>
+
+  </div>
+
+  <div class="bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/30 dark:border-white/20 rounded-2xl p-6 h-fit">
+    <h3 class="font-bold mb-4">Project Info</h3>
+    <ul class="space-y-2 text-sm">
+      <li><strong>Role:</strong> Developer</li>
+      <li><strong>Tech:</strong> Python, OpenCV, ESP32</li>
+      <li><strong>Duration:</strong> Jan 2025 – Present</li>
+      <li><strong>Status:</strong> Ongoing</li>
+    </ul>
+  </div>
+
+</section>
+
+<style>
+  .project-btn {
+    position: relative;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: bold;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: all 0.3s ease;
+  }
+  .project-btn:hover {
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  }
+</style>
+
+<script>
+  const html = document.documentElement;
+  const toggleBtn = document.getElementById('theme-toggle');
+  const themeText = document.getElementById('theme-text');
+
+  if (html.classList.contains('dark')) {
+    themeText.textContent = 'Light';
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    html.classList.toggle('dark');
+    const isDark = html.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    themeText.textContent = isDark ? 'Light' : 'Dark';
+  });
+</script>
+
+</body>
+</html>
