@@ -6,6 +6,18 @@ interface Project {
 }
 
 const projects: Project[] = [
+        {
+        title: "Emotionware",
+        description: "Real-time computer vision system that detects and classifies emotions using camera input and Presage machine learning. Sends data to custom wearable device.",
+        tags: ["Python CV/Deepface", "Electonics", "Presage SDK", "Gemini API"],
+        link: "https://hadeedkhan1.github.io/emotionware"
+    },
+    {
+        title: "Custom Bandit Algorithm Model with simulation",
+        description: "Developed a building simulation and a new custom hybrid Bandit model that most efficiently heats and cools all types of buildings and dwellings. Compiled results into a published research paper.",
+        tags: ["Machine Learning", "Bandit Algorithms", "Python Simulation", "Mathematical Modeling"],
+        link: "https://nhsjs.com/2024/model-free-bandit-algorithms-for-efficient-temperature-regulation-in-buildings/"
+    },
     {
         title: "Stock Data Visualizer",
         description: "A dashboard using Streamlit and Plotly to analyze real-time financial data, featuring technical indicators and a custom price-alert system.",
@@ -17,12 +29,6 @@ const projects: Project[] = [
         description: "An menu recommender that uses Computer Vision to digitize physical menus and a Tinder-style swipe interface to refine a personalized reinforcement learning model for meal suggestions.",
         tags: ["In Progress", "Python", "Computer Vision", "OpenAI API"],
         link: "https://github.com/hadeedkhan1"
-    },
-       {
-        title: "Custom Bandit Algorithm Model with simulation",
-        description: "Developed a building simulation and a new custom hybrid Bandit model that most efficiently heats and cools all types of buildings and dwellings. Compiled results into a published research paper.",
-        tags: ["Machine Learning", "Bandit Algorithms", "Python Simulation", "Mathematical Modeling"],
-        link: "https://nhsjs.com/2024/model-free-bandit-algorithms-for-efficient-temperature-regulation-in-buildings/"
     },
            {
         title: "Mathwise",
