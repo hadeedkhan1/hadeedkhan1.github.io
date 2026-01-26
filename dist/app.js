@@ -1,5 +1,17 @@
 var projects = [
     {
+        title: "Emotionware",
+        description: "Real-time computer vision system that detects and classifies emotions using camera input and Presage machine learning. Sends data to custom wearable device.",
+        tags: ["Python CV/Deepface", "Electonics", "Presage SDK", "Gemini API"],
+        link: "https://hadeedkhan1.github.io/emotionware"
+    },
+    {
+        title: "Custom Bandit Algorithm Model with simulation",
+        description: "Developed a building simulation and a new custom hybrid Bandit model that most efficiently heats and cools all types of buildings and dwellings. Compiled results into a published research paper.",
+        tags: ["Machine Learning", "Bandit Algorithms", "Python Simulation", "Mathematical Modeling"],
+        link: "https://nhsjs.com/2024/model-free-bandit-algorithms-for-efficient-temperature-regulation-in-buildings/"
+    },
+    {
         title: "Stock Data Visualizer",
         description: "A dashboard using Streamlit and Plotly to analyze real-time financial data, featuring technical indicators and a custom price-alert system.",
         tags: ["Python", "AWS", "Streamlit", "Plotly"],
@@ -10,12 +22,6 @@ var projects = [
         description: "An menu recommender that uses Computer Vision to digitize physical menus and a Tinder-style swipe interface to refine a personalized reinforcement learning model for meal suggestions.",
         tags: ["In Progress", "Python", "Computer Vision", "OpenAI API"],
         link: "https://github.com/hadeedkhan1"
-    },
-    {
-        title: "Custom Bandit Algorithm Model with simulation",
-        description: "Developed a building simulation and a new custom hybrid Bandit model that most efficiently heats and cools all types of buildings and dwellings. Compiled results into a published research paper.",
-        tags: ["Machine Learning", "Bandit Algorithms", "Python Simulation", "Mathematical Modeling"],
-        link: "https://nhsjs.com/2024/model-free-bandit-algorithms-for-efficient-temperature-regulation-in-buildings/"
     },
     {
         title: "Mathwise",
@@ -60,7 +66,7 @@ function renderProjects() {
     var grid = document.getElementById('project-grid');
     if (!grid)
         return;
-    grid.innerHTML = projects.map(function (project) { return "\n        <div class=\"relative flex flex-col p-8 overflow-hidden transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(103,178,216,0.3)]\">\n            <span class=\"absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/80 dark:via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]\"></span>\n\n            <div class=\"relative z-10 flex flex-col h-full\">\n                <h3 class=\"text-[#0C343D] dark:text-white text-2xl font-bold mb-3\">".concat(project.title, "</h3>\n                <p class=\"text-[#0C343D] dark:text-stone-300 mb-6 leading-relaxed flex-grow font-medium opacity-90\">").concat(project.description, "</p>\n                <div class=\"flex flex-wrap gap-2 mb-6\">\n                    ").concat(project.tags.map(function (tag) { return "\n                        <span class=\"bg-white/40 dark:bg-white/10 text-[#6BAB4F] dark:text-[#67B2D8] border border-white/60 dark:border-white/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide\">".concat(tag, "</span>\n                    "); }).join(''), "\n                </div>\n                <a href=\"").concat(project.link, "\" target=\"_blank\" class=\"inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#67B2D8] transition-colors mt-auto\">\n                    View Project \n                    <svg class=\"w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 8l4 4m0 0l-4 4m4-4H3\"></path></svg>\n                </a>\n            </div>\n        </div>\n    "); }).join('');
+    grid.innerHTML = projects.map(function (project) { return "\n        <div class=\"relative flex flex-col p-8 overflow-hidden transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(103,178,216,0.3)]\">\n            <span class=\"absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/80 dark:via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]\"></span>\n\n            <div class=\"relative z-10 flex flex-col h-full\">\n                <h3 class=\"text-[#0C343D] dark:text-white text-2xl font-bold mb-3\">".concat(project.title, "</h3>\n                <p class=\"text-[#0C343D] dark:text-stone-300 mb-6 leading-relaxed flex-grow font-medium opacity-90\">").concat(project.description, "</p>\n                <div class=\"flex flex-wrap gap-2 mb-6\">\n                    ").concat(project.tags.map(function (tag) { return "\n                        <span class=\"bg-white/40 dark:bg-white/10 text-[#6BAB4F] dark:text-[#67B2D8] border border-white/60 dark:border-white/10 text-xs px-3 py-1 rounded-lg font-bold uppercase tracking-wide\">".concat(tag, "</span>\n                    "); }).join(''), "\n                </div>\n                <a href=\"").concat(project.link, "\" target=\"_blank\" class=\"inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition-colors mt-auto\">\n                    View Project \n                    <svg class=\"w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M17 8l4 4m0 0l-4 4m4-4H3\"></path></svg>\n                </a>\n            </div>\n        </div>\n    "); }).join('');
 }
 function renderExperience() {
     var grid = document.getElementById('experience-grid');
