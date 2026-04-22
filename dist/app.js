@@ -2,39 +2,45 @@ var projects = [
     {
         title: "Emotionware",
         description: "Real-time computer vision system that detects and classifies emotions using camera input and Presage machine learning. Sends data to custom wearable device.",
-        tags: ["Python CV/Deepface", "Electonics", "Presage SDK", "Gemini API"],
+        tags: ["Python CV/Deepface", "Embedded Systems", "Presage SDK", "Gemini API"],
         link: "https://hadeedkhan1.github.io/emotionware"
     },
     {
         title: "Custom Bandit Algorithm Model with simulation",
         description: "Developed a building simulation and a new custom hybrid Bandit model that most efficiently heats and cools all types of buildings and dwellings. Compiled results into a published research paper.",
-        tags: ["Machine Learning", "Bandit Algorithms", "Python Simulation", "Mathematical Modeling"],
+        tags: ["Machine Learning", "Bandit Algorithms", "Python Simulation", "Reinforcement Learning"],
         link: "https://nhsjs.com/2024/model-free-bandit-algorithms-for-efficient-temperature-regulation-in-buildings/"
     },
     {
         title: "Stock Data Visualizer",
         description: "A dashboard using Streamlit and Plotly to analyze real-time financial data, featuring technical indicators and a custom price-alert system.",
-        tags: ["Python", "AWS", "Streamlit", "Plotly"],
+        tags: ["Python", "AWS", "Streamlit", "Data Visualization"],
         link: "https://github.com/hadeedkhan1"
     },
     {
         title: "Food Match",
-        description: "An menu recommender that uses Computer Vision to digitize physical menus and a Tinder-style swipe interface to refine a personalized reinforcement learning model for meal suggestions.",
-        tags: ["In Progress", "Python", "Computer Vision", "OpenAI API"],
+        description: "Computer Vision based menu recommendation system that that learns user preferences through interactive feedback and a swipe style interface to personalize meal suggestions.",
+        tags: ["Python", "Computer Vision", "Full Stack", "OpenAI API"],
         link: "https://github.com/hadeedkhan1"
     },
     {
         title: "Mathwise",
-        description: "A free AI tutoring platform sponsored by Mathnasium that provides personalized STEM problem-solving to 2,000+ users, resulting in a measurable 12% average grade improvement.",
-        tags: ["Python", "OpenAI API", "Data Analysis"],
+        description: "Free AI tutoring platform sponsored by Mathnasium that provides personalized STEM problem-solving to 2,000+ users, resulting in a measurable 12% average grade improvement.",
+        tags: ["Python", "OpenAI API", "Full Stack Development", "Education Tech"],
         link: "https://mathwise.help"
     }
 ];
 var experience = [
     {
+        title: "Software Engineering Intern | Capsher Technologies (Summer 2026)",
+        description: "",
+        tags: ["Backend Development", "Azure Cloud Deployment", "REST APIs", "Systems Engineering"],
+        link: "https://capsher.com/"
+    },
+    {
         title: "IT Intern | City of Austin/Dell Technologies (Summer 2024 & Summer 2025)",
         description: "",
-        tags: ["Teamwork", "Communication", "Technical Support"],
+        tags: ["IT Infrastructure", "Communication", "Systems Support"],
         link: "#"
     },
     {
@@ -46,19 +52,25 @@ var experience = [
     {
         title: "Founder and CEO | Academix Tutors (2023-Present)",
         description: "",
-        tags: ["Math", "Physics", "Database", "Google Apps Scripts"],
+        tags: ["Math", "Physics", "Database", "Scripting"],
         link: "https://academixtutors.com"
+    },
+    {
+        title: "Robotics Engineer | Texas A&M TURTLES Robotics, MAZE team (2026-Present)",
+        description: "",
+        tags: ["Teamwork", "ROS2", "Autonomous Navigation", "SLAM"],
+        link: "https://www.turtlerobotics.org/SCPosters/MAZE_SC_Spring26.pptx.png"
     },
     {
         title: "Fabrication Team | FRC Robotics #418 (2021-2025)",
         description: "",
-        tags: ["3D Modeling", "Fabrication", "Design Process"],
+        tags: ["CAD", "Fabrication", "Design Process"],
         link: "https://www.lasarobotics.org/"
     },
     {
-        title: "Coach + Admin | FTC Robotics #31675/#27859 (2024-Present)",
-        description: "",
-        tags: ["Path Planning", "Computer Vision", "Mentorship"],
+        title: "Coach + Admin | FTC Robotics #31675/#27859 (2024-2026)",
+        description: "Compass award for mentorship",
+        tags: ["Path Planning", "CAD", "Mentorship", "Strategy"],
         link: "https://icbcrobotics.org/"
     }
 ];
