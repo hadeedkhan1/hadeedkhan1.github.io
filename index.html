@@ -22,14 +22,47 @@
         <a href="mailto:hadeedkhan8@outlook.com" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition">Contact</a>
 
     </div>
-            <button id="theme-toggle" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition flex items-center gap-1 font-bold text-xs uppercase">
-    <span id="theme-text">Dark</span> <span id="theme-icon"></span></button>
+           <div class="flex items-center gap-3">
+
+    <button
+        id="open-command-palette"
+        class="
+            hidden md:flex
+            items-center
+            gap-3
+            px-4
+            py-2
+            rounded-xl
+            bg-white/20
+            dark:bg-white/10
+            border
+            border-white/20
+            text-sm
+            text-[#0C343D]
+            dark:text-[#DBC6A5]
+            hover:bg-white/30
+            dark:hover:bg-white/20
+            transition
+        "
+    >
+        <span class="opacity-70">
+            > Search...
+        </span>
+
+        <span class="text-xs opacity-50">
+            Shift+K
+        </span>
+    </button>
+
+    <button id="theme-toggle" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition flex items-center gap-1 font-bold text-xs uppercase">
+        <span id="theme-text">Dark</span>
+        <span id="theme-icon"></span>
+    </button>
+
+</div>
 
 <button id="menu-btn" class="md:hidden text-[#0C343D] dark:text-white p-2 focus:outline-none mr-10">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-    </button>
+
 </div>
         <div id="mobile-menu" class="hidden md:hidden border-t border-white/20">
     <div class="flex flex-col p-4 space-y-4 text-sm font-medium">
@@ -82,11 +115,50 @@
         </div>
 </section>
 
+<!-- terminal thing -->
+  <div
+  id="command-palette-overlay"
+class="fixed inset-0 z-[100] hidden items-start justify-center pt-28">
+  <div
+    id="command-palette"
+class="
+w-[92%]
+max-w-xl
+rounded-2xl
+border
+border-white/20
+backdrop-blur-md
+shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+overflow-hidden
+"  >
+    <div class="p-4 border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <span class="text-[#6BAB4F] dark:text-[#67B2D8]">
+          >
+        </span>
 
-   
+        <input
+          id="command-input"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Type a command..."
+          class="w-full bg-transparent outline-none text-[#0C343D] dark:text-[#DBC6A5]"
+        >
+      </div>
+    </div>
+
+    <div
+      id="command-results"
+      class="max-h-[320px] overflow-y-auto"
+    >
+    </div>
+  </div>
+</div> 
 
 
     <script src="dist/app.js"></script>
+    <script src="js/terminal.js"></script>
   <!--  <script
     type="module"
     src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"
