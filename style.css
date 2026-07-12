@@ -1,4 +1,3 @@
-/* Light mode */
 ::selection {
     background-color: #500000; /* dark mode background */
     color: #DBC6A5;
@@ -9,7 +8,6 @@
     color: #DBC6A5;
 }
 
-/* Dark mode */
 .dark ::selection {
     background-color: #DBC6A5; /* light mode background */
     color: #500000;
@@ -18,4 +16,15 @@
 .dark ::-moz-selection {
     background-color: #DBC6A5;
     color: #500000;
+}
+
+.app {
+	height: 100vh;
+  width: 100vw;
+
+  cursor: url(cursors/neo-nyan-cursor.png), auto;
+}
+
+.app button {
+  cursor: url(cursors/neo-nyan-pointer.png), auto;
 }
