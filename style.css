@@ -59,3 +59,11 @@ header {
     position: relative;
     overflow: hidden;
 }
+
+@media (max-width: 768px){
+
+    #lidar-background{
+        display:none;
+    }
+
+}
