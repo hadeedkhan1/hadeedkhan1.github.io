@@ -45,3 +45,17 @@ section {
     z-index: 1;
 }
 
+#lidar-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 600px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+header {
+    position: relative;
+    overflow: hidden;
+}
