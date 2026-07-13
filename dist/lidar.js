@@ -1,4 +1,5 @@
 function initLidar(){
+const showRobot = window.innerWidth >= 768;
 
 const canvas = document.getElementById("lidar-background");
 
@@ -25,10 +26,6 @@ window.addEventListener("resize", resize);
 
 
 
-// =======================
-// ROBOT STATE
-// =======================
-
 const robot = {
 
     x: 200,
@@ -41,7 +38,6 @@ const robot = {
 };
 
 
-// independent LiDAR rotation
 
 let lidarAngle = 0;
 
@@ -50,11 +46,6 @@ const scannedPoints = [];
 
 
 
-
-
-// =======================
-// MAP ENVIRONMENT
-// =======================
 
 function getObstacles(){
 
@@ -138,12 +129,6 @@ height:100
 
 
 
-
-
-// =======================
-// COLLISION
-// =======================
-
 function checkCollision(x,y,obstacles){
 
 const size = 20;
@@ -176,12 +161,6 @@ return false;
 
 
 
-
-
-
-// =======================
-// LIDAR RAYCAST
-// =======================
 
 function castRay(angle, obstacles){
 
@@ -270,11 +249,6 @@ getObstacles();
 
 
 
-// =======================
-// ROBOT MOVEMENT
-// =======================
-
-
 let nextX =
 robot.x +
 Math.cos(robot.heading)
@@ -321,22 +295,12 @@ robot.heading +=
 
 
 
-
-// =======================
-// LIDAR ROTATION
-// =======================
-
-
 lidarAngle += 0.05;
 
 
 
 
 
-
-// =======================
-// SCAN
-// =======================
 
 
 for(let i=0;i<12;i++){
@@ -383,9 +347,7 @@ scannedPoints.splice(
 
 
 
-// =======================
-// DRAW MAP
-// =======================
+
 
 
 scannedPoints.forEach(point=>{
@@ -415,13 +377,7 @@ ctx.fill();
 
 
 
-
-
-
-// =======================
-// DRAW ROBOT
-// =======================
-
+if(showRobot){
 
 ctx.save();
 
@@ -438,7 +394,6 @@ robot.heading
 
 
 
-// chassis
 
 ctx.fillStyle =
 "#0C343D";
@@ -458,7 +413,6 @@ ctx.fill();
 
 
 
-// wheels
 
 ctx.fillStyle =
 "#222";
@@ -482,7 +436,6 @@ ctx.fillRect(
 
 
 
-// front LED
 
 ctx.fillStyle =
 "#6BAB4F";
@@ -497,7 +450,6 @@ ctx.fillRect(
 
 
 
-// lidar tower
 
 ctx.fillStyle =
 "#67B2D8";
@@ -521,14 +473,10 @@ ctx.fill();
 ctx.restore();
 
 
+}
 
 
 
-
-
-// =======================
-// LIDAR SCAN CONE
-// =======================
 
 
 ctx.beginPath();
@@ -569,7 +517,6 @@ ctx.fill();
 
 
 
-// actual beam
 
 
 ctx.beginPath();
