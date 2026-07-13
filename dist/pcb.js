@@ -1,5 +1,6 @@
 function initPCB() {
     console.log("PCB initialized");
+    let pulseOffset = 0;
     
     let mouseX = -1000;
     let mouseY = -1000;
@@ -25,6 +26,7 @@ function initPCB() {
 
 
     const nodes = [];
+    const connections = [];
 
     for(let i = 0; i < 100; i++){
 
@@ -35,8 +37,33 @@ function initPCB() {
 
     }
 
+    for (const a of nodes) {
+    for (const b of nodes) {
+
+        const distance = Math.hypot(
+            a.x - b.x,
+            a.y - b.y
+        );
+
+        if (distance < 250 && distance > 0) {
+
+            if (Math.random() < 0.20) {
+
+    connections.push({
+        start: a,
+        end: b,
+        hasPulse: Math.random() < 0.2
+    });
+
+}
+
+        }
+    }
+}
+
 
     function draw(){
+        pulseOffset += 0.003;
         const isDark =
     document.documentElement
         .classList
@@ -99,21 +126,13 @@ ctx.shadowColor =
 
         // connections
 
-        nodes.forEach(a=>{
+     connections.forEach(line => {
 
-            nodes.forEach(b=>{
+    const midX =
+        (line.start.x + line.end.x) / 2;
 
-                const distance =
-                Math.hypot(
-                    a.x-b.x,
-                    a.y-b.y
-                );
-
-
-                if(distance < 180){
-
-    const midX = (a.x + b.x) / 2;
-    const midY = (a.y + b.y) / 2;
+    const midY =
+        (line.start.y + line.end.y) / 2;
 
     const distanceToMouse =
         Math.hypot(
@@ -121,7 +140,7 @@ ctx.shadowColor =
             midY - mouseY
         );
 
-    const maxDistance = 150;
+    const maxDistance = 200;
 
     const intensity =
         Math.max(
@@ -131,30 +150,56 @@ ctx.shadowColor =
 
     ctx.beginPath();
 
-    ctx.moveTo(a.x,a.y);
-    ctx.lineTo(b.x,b.y);
+    ctx.moveTo(
+        line.start.x,
+        line.start.y
+    );
 
-  ctx.strokeStyle =
-    `rgba(${traceColor},${0.15 + intensity * 0.98})`;
+    ctx.lineTo(
+        line.end.x,
+        line.end.y
+    );
+
+    ctx.strokeStyle =
+        `rgba(${traceColor},${0.20 + intensity * 0.9})`;
 
     ctx.lineWidth =
         1 + intensity * 2;
 
-        ctx.shadowBlur =intensity * 
-    intensity * 15;
+    ctx.stroke();
 
-ctx.shadowColor =
+});
+    connections.forEach(line => {
+         if (!line.hasPulse) return;
+
+    const t =
+        (pulseOffset % 1);
+
+    const x =
+        line.start.x +
+        (line.end.x - line.start.x) * t;
+
+    const y =
+        line.start.y +
+        (line.end.y - line.start.y) * t;
+
+    ctx.beginPath();
+
+   ctx.arc(x, y, 4, 0, Math.PI * 2);
+
+const pulseColor =
     isDark
         ? "#DBC6A5"
         : "#6BAB4F";
 
-    ctx.stroke();
+ctx.fillStyle = pulseColor;
+
+ctx.shadowBlur = 10;
+ctx.shadowColor = pulseColor;
+    ctx.fill();
     ctx.shadowBlur = 0;
-}
 
-            })
-
-        })
+});
 
 
         requestAnimationFrame(draw);
