@@ -109,3 +109,5 @@ document.addEventListener('DOMContentLoaded', function () {
         mobileMenu === null || mobileMenu === void 0 ? void 0 : mobileMenu.classList.toggle('hidden');
     });
 });
+
+initPCB();
