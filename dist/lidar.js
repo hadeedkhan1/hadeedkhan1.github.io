@@ -49,64 +49,65 @@ function getObstacles(){
 return [
 
 {
-x:50,
-y:50,
+
+x:50 + offsetX,
+y:50 + offsetY,
 width:500,
 height:15
 },
 
 {
-x:50,
-y:450,
-width:500,
-height:15
-},
-
-{
-x:50,
-y:50,
-width:15,
-height:415
-},
-
-{
-x:535,
-y:50,
-width:15,
-height:415
-},
-
-{
-x:180,
-y:50,
+x:180 + offsetX,
+y:50 + offsetY,
 width:15,
 height:180
 },
 
 {
-x:300,
-y:180,
+x:50 + offsetX,
+y:50 + offsety,
+width:15,
+height:415
+},
+
+{
+x:535 + offsetX,
+y:50 + offsety,
+width:15,
+height:415
+},
+
+{
+x:180 + offsetX,
+y:50 + offsety,
+width:15,
+height:180
+},
+
+{
+x:300 + offsetX,
+y:180 + offsety,
 width:160,
 height:15
 },
 
 {
-x:400,
-y:180,
+x:400 + offsetX,
+y:180 + offsety,
 width:15,
 height:150
 },
 
 {
-x:120,
-y:330,
+x:120 + offsetX,
+y:330 + offsety,
 width:180,
 height:15
 },
 
 {
-x:120,
-y:330,
+x:120 + offsetX,
+y:330 + offsety,
 width:15,
 height:100
 }
