@@ -24,8 +24,8 @@ window.addEventListener("resize", resize);
 
 const robot = {
 
-    x: 200,
-    y: 250,
+    x: 200 + offsetX,
+    y: 250 + offsetY,
 
     heading: 0,
 
@@ -34,6 +34,9 @@ const robot = {
 };
 
 let lidarAngle = 0;
+
+const offsetX = 120;
+const offsetY = 80;
 
 const scannedPoints = [];
 
