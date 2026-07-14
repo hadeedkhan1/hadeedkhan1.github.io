@@ -275,7 +275,7 @@ if(positionHistory.length === 120){
         robot.y - first.y
     );
 
-    if(distance < 60){
+    if(distance < 30){
 
         robot.heading += Math.PI;
 
