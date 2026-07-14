@@ -24,8 +24,8 @@ window.addEventListener("resize", resize);
 
 const robot = {
 
-    x: 200 + offsetX,
-    y: 250 + offsetY,
+    x: 200,
+    y: 250,
 
     heading: 0,
 
@@ -34,9 +34,6 @@ const robot = {
 };
 
 let lidarAngle = 0;
-
-const offsetX = 120;
-const offsetY = 80;
 
 const scannedPoints = [];
 
@@ -49,65 +46,64 @@ function getObstacles(){
 return [
 
 {
-
-x:50 + offsetX,
-y:50 + offsetY,
+x:50,
+y:50,
 width:500,
 height:15
 },
 
 {
-x:180 + offsetX,
-y:50 + offsetY,
-width:15,
-height:180
+x:50,
+y:450,
+width:500,
+height:15
 },
 
 {
-x:50 + offsetX,
-y:50 + offsety,
-width:15,
-height:415
-},
-
-{
-x:535 + offsetX,
-y:50 + offsety,
+x:50,
+y:50,
 width:15,
 height:415
 },
 
 {
-x:180 + offsetX,
-y:50 + offsety,
+x:535,
+y:50,
+width:15,
+height:415
+},
+
+{
+x:180,
+y:50,
 width:15,
 height:180
 },
 
 {
-x:300 + offsetX,
-y:180 + offsety,
+x:300,
+y:180,
 width:160,
 height:15
 },
 
 {
-x:400 + offsetX,
-y:180 + offsety,
+x:400,
+y:180,
 width:15,
 height:150
 },
 
 {
-x:120 + offsetX,
-y:330 + offsety,
+x:120,
+y:330,
 width:180,
 height:15
 },
 
 {
-x:120 + offsetX,
-y:330 + offsety,
+x:120,
+y:330,
 width:15,
 height:100
 }
