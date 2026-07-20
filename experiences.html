@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Hadeed Khan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="experiences" class="bg-[#DBC6A5] dark:bg-[#500000] transition-colors duration-500 text-stone-800 font-sans">
+    <canvas id="pcb-background"></canvas>
+
+<nav class="sticky top-4 z-50 mx-auto max-w-5xl px-4">
+    <div class="bg-white/[0.4] dark:bg-black/[0.4] backdrop-blur-md backdrop-saturate-150 border border-white/[0.2] shadow-[0_4px_30px_rgba(0,0,0,0.1)] rounded-2xl">
+       <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
+    <span class="text-[#0C343D] dark:text-[#DBC6A5] text-xl font-bold tracking-tight whitespace-nowrap">Hadeed Khan</span>
+    
+    <div class="hidden md:flex space-x-8 text-sm font-medium">
+        <a href="index.html" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition">Home</a>
+        <a href="projects.html" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition">Projects</a>
+        <a href="experiences.html" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition">Experience</a>
+        <a href="mailto:hadeedkhan8@outlook.com" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition">Contact</a>
+
+    </div>
+           <div class="flex items-center gap-3">
+
+    <button
+        id="open-command-palette"
+        class="
+            hidden md:flex
+            items-center
+            gap-3
+            px-4
+            py-2
+            rounded-xl
+            bg-white/20
+            dark:bg-white/10
+            border
+            border-white/20
+            text-sm
+            text-[#0C343D]
+            dark:text-[#DBC6A5]
+            hover:bg-white/30
+            dark:hover:bg-white/20
+            transition
+        "
+    >
+        <span class="opacity-70">
+            > Search...
+        </span>
+
+        <span class="text-xs opacity-50">
+            Shift+K
+        </span>
+    </button>
+
+    <button id="theme-toggle" class="text-[#0C343D] dark:text-[#DBC6A5] hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition flex items-center gap-1 font-bold text-xs uppercase">
+        <span id="theme-text">Dark</span>
+        <span id="theme-icon"></span>
+    </button>
+
+</div>
+
+<button id="menu-btn" class="md:hidden text-[#0C343D] dark:text-white p-2 focus:outline-none mr-10">
+
+</div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-white/20">
+    <div class="flex flex-col p-4 space-y-4 text-sm font-medium">
+        <a href="index.html" class="mobile-link text-[#0C343D] dark:text-[#DBC6A5] dark:hover:text-[#67B2D8]">Home</a>
+        <a href="projects.html" class="mobile-link text-[#0C343D] dark:text-[#DBC6A5] dark:hover:text-[#67B2D8]">Projects</a>
+        <a href="experiences.html" class="mobile-link text-[#0C343D] dark:text-[#DBC6A5] dark:hover:text-[#67B2D8]">Experience</a>
+        <a href="mailto:hadeedkhan8@outlook.com" class="mobile-link text-[#6BAB4F] dark:text-[#DBC6A5] dark:hover:text-[#67B2D8]">Contact</a>
+    </div>
+</div>
+    </div>
+</nav>
+
+    <header class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+   
+        <h1 class="text-[#0C343D] dark:text-[#DBC6A5] text-4xl md:text-6xl font-extrabold mb-6">
+            Experiences
+        </h1>
+        <p class="text-lg text-[#0C343D] dark:text-stone-300 max-w-3xl mb-8 leading-relaxed">
+            Learning by building.
+        </p>
+        <div class="experience-timeline" aria-label="Experience timeline from 2021 to 2026">
+            <div class="timeline-years" aria-hidden="true">
+                <span>2021</span>
+                <span>Future</span>
+            </div>
+            <div class="timeline-track">
+
+                <div class="timeline-event" tabindex="0">
+                    <span class="timeline-node">01</span>
+                    <span class="timeline-label">City of Austin</span>
+                    <span class="timeline-detail">IT Intern</span>
+                </div>
+
+                <div class="timeline-event" tabindex="0">
+                    <span class="timeline-node">02</span>
+                    <span class="timeline-label">ReliablyME</span>
+                    <span class="timeline-detail">SWE Intern</span>
+                </div>
+                    <div class="timeline-event" tabindex="0">
+                    <span class="timeline-node">03</span>
+                    <span class="timeline-label">MAZE</span>
+                    <span class="timeline-detail">Robotics Research</span>
+                </div>
+                <div class="timeline-event" tabindex="0">
+                    <span class="timeline-node">04</span>
+                    <span class="timeline-label">Capsher Technology</span>
+                    <span class="timeline-detail">SWE Intern</span>
+                </div>
+
+            </div>
+        </div>
+        <div class="flex flex-wrap gap-4">
+            <a href="index.html" class="relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-bold text-[#0C343D] dark:text-white transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:scale-100 hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]">
+                <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/80 dark:via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
+                <span class="relative">Back to home</span>
+            </a>
+
+        </div>
+    </header>
+
+    <section id="experience" class="max-w-5xl mx-auto px-6 py-16 pb-32">
+        <div class="flex items-center justify-between mb-10">
+            <h2 class="text-[#0C343D] dark:text-[#DBC6A5] text-3xl font-bold">Experience</h2>
+        </div>
+        <div id="experience-grid" class="grid grid-cols-1 gap-8 max-w-4xl mx-auto"></div>
+    </section>
+
+       <!-- terminal thing -->
+  <div
+  id="command-palette-overlay"
+class="fixed inset-0 z-[100] hidden items-start justify-center pt-28">
+  <div
+    id="command-palette"
+class="
+w-[92%]
+max-w-xl
+rounded-2xl
+border
+border-white/20
+backdrop-blur-md
+shadow-[0_20px_60px_rgba(0,0,0,0.25)]
+overflow-hidden
+"  >
+    <div class="p-4 border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <span class="text-[#6BAB4F] dark:text-[#67B2D8]">
+          >
+        </span>
+
+        <input
+          id="command-input"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Type a command..."
+          class="w-full bg-transparent outline-none text-[#0C343D] dark:text-[#DBC6A5]"
+        >
+      </div>
+    </div>
+
+    <div
+      id="command-results"
+      class="max-h-[320px] overflow-y-auto"
+    >
+    </div>
+  </div>
+</div> 
+
+
+    <script src="dist/pcb.js"></script>
+    <script src="dist/app.js"></script>
+    <script src="js/terminal.js"></script>
+</body>
+</html>

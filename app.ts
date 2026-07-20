@@ -1,36 +1,45 @@
 interface Project {
+    id: string;
     title: string;
     description: string;
     tags: string[];
     link: string;
 }
 
+declare function initPCB(): void;
+declare function initLidar(): void;
+
 const projects: Project[] = [
         {
+        id: "emotionware",
         title: "Emotionware",
         description: "Real-time computer vision system that detects and classifies emotions using camera input and Presage machine learning. Sends data to custom wearable device.",
         tags: ["Python CV/Deepface", "Embedded Systems", "Presage SDK", "Gemini API"],
         link: "https://hadeedkhan1.github.io/emotionware"
     },
     {
+        id: "bandit-model",
         title: "Custom Bandit Algorithm Model with simulation",
         description: "Developed a building simulation and a new custom hybrid Bandit model that most efficiently heats and cools all types of buildings and dwellings. Compiled results into a published research paper.",
         tags: ["Machine Learning", "Bandit Algorithms", "Python Simulation", "Reinforcement Learning"],
         link: "https://nhsjs.com/2024/model-free-bandit-algorithms-for-efficient-temperature-regulation-in-buildings/"
     },
     {
+        id: "stock-visualizer",
         title: "Stock Data Visualizer",
         description: "A dashboard using Streamlit and Plotly to analyze real-time financial data, featuring technical indicators and a custom price-alert system.",
         tags: ["Python", "AWS", "Streamlit", "Data Visualization"],
         link: "https://github.com/hadeedkhan1"
     },
     {
+        id: "food-match",
         title: "Food Match",
         description: "Computer Vision based menu recommendation system that that learns user preferences through interactive feedback and a swipe style interface to personalize meal suggestions.",
         tags: ["Python", "Computer Vision", "Full Stack", "OpenAI API"],
         link: "https://github.com/hadeedkhan1"
     },
            {
+        id: "mathwise",
         title: "Mathwise",
         description: "Free AI tutoring platform sponsored by Mathnasium that provides personalized STEM problem-solving to 2,000+ users, resulting in a measurable 12% average grade improvement.",
         tags: ["Python", "OpenAI API", "Full Stack Development", "Education Tech"],
@@ -40,36 +49,42 @@ const projects: Project[] = [
 
 const experience: Project[] = [
         {
+        id: "capsher",
         title: "Software Engineering Intern | Capsher Technologies (Summer 2026)",
         description: "",
         tags: ["Backend Development", "Azure Cloud Deployment", "REST APIs", "Systems Engineering"],
         link: "https://capsher.com/"
     },
     {
+        id: "city-of-austin-dell",
         title: "IT Intern | City of Austin/Dell Technologies (Summer 2024 & Summer 2025)",
         description: "",
         tags: ["IT Infrastructure", "Communication", "Systems Support"],
         link: "#"
     },
     {
+        id: "reliablyme",
         title: "Software Engineering Intern | ReliablyME (2024-2025)",
         description: "",
         tags: ["SDLC", "Python", "SQL", "AWS"],
         link: "https://reliablyme.com"
     },
        {
+        id: "academix-tutors",
         title: "Founder and CEO | Academix Tutors (2023-Present)",
         description: "",
         tags: ["Math", "Physics", "Database", "Scripting"],
         link: "https://academixtutors.com"
     },
         {
+        id: "turtles-robotics",
         title: "Robotics Engineer | Texas A&M TURTLES Robotics, MAZE team (2026-Present)",
         description: "",
         tags: ["Teamwork", "ROS2", "Autonomous Navigation", "SLAM"],
         link: "https://www.turtlerobotics.org/SCPosters/MAZE_SC_Spring26.pptx.png"
     },
            {
+        id: "frc-418",
         title: "Fabrication Team | FRC Robotics #418 (2021-2025)",
         description: "",
         tags: ["CAD", "Fabrication", "Design Process"],
@@ -77,6 +92,7 @@ const experience: Project[] = [
     }
     ,
            {
+        id: "ftc-coach-admin",
         title: "Coach + Admin | FTC Robotics #31675/#27859 (2024-2026)",
         description: "Compass award for mentorship",
         tags: ["Path Planning", "CAD", "Mentorship", "Strategy"],
@@ -84,12 +100,23 @@ const experience: Project[] = [
     }
 ];
 
+///////
+const featuredProjectIds = ["emotionware", "bandit-model", "mathwise", "food-match"];
+const featuredExperienceIds = ["capsher", "turtles-robotics", "city-of-austin-dell", "reliablyme", "academix-tutors"];
+
+function isHomepage() {
+    return document.body.dataset.page === 'home';
+}
 
 function renderProjects() {
     const grid = document.getElementById('project-grid');
     if (!grid) return;
 
-    grid.innerHTML = projects.map(project => `
+    const items = isHomepage()
+        ? projects.filter(project => featuredProjectIds.includes(project.id))
+        : projects;
+
+    grid.innerHTML = items.map(project => `
         <div class="relative flex flex-col p-8 overflow-hidden transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(103,178,216,0.3)]">
             <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/80 dark:via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
 
@@ -102,7 +129,7 @@ function renderProjects() {
                     `).join('')}
                 </div>
                 <a href="${project.link}" target="_blank" class="inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#6BAB4F] dark:hover:text-[#67B2D8] transition-colors mt-auto">
-                    View Project 
+                    View Project
                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
@@ -114,8 +141,12 @@ function renderExperience() {
     const grid = document.getElementById('experience-grid');
     if (!grid) return;
 
-    grid.innerHTML = experience.map(job => `
-        <div class="relative flex flex-col p-8 overflow-hidden transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(103,178,216,0.3)]">
+    const items = isHomepage()
+        ? experience.filter(job => featuredExperienceIds.includes(job.id))
+        : experience;
+
+    grid.innerHTML = items.map(job => `
+        <div class="experience-card relative flex flex-col p-8 overflow-hidden transition-all duration-300 rounded-xl group bg-white/30 dark:bg-white/10 backdrop-blur-md border border-white/50 dark:border-white/20 hover:bg-white/50 dark:hover:bg-white/20 hover:shadow-[0_0_20px_rgba(103,178,216,0.3)]">
             <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/80 dark:via-white/30 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></span>
 
             <div class="relative z-10 flex flex-col h-full">
@@ -129,7 +160,7 @@ function renderExperience() {
 
                 </div>
                 <a href="${job.link}" target="_blank" class="inline-flex items-center text-[#0C343D] dark:text-white font-extrabold hover:text-[#67B2D8] transition-colors mt-auto">
-                    View Details 
+                    View Details
                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </a>
             </div>
@@ -150,10 +181,55 @@ function setupDarkMode() {
     });
 }
 
+function setupExperienceTimeline() {
+    const timeline = document.querySelector('.experience-timeline');
+    if (!timeline) return;
+
+    const revealTimeline = () => timeline.classList.add('is-visible');
+    if (!('IntersectionObserver' in window)) {
+        revealTimeline();
+        return;
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        revealTimeline();
+        observer.disconnect();
+    }, { threshold: 0.25 });
+
+    observer.observe(timeline);
+}
+
+function setupExperienceCards() {
+    const cards = document.querySelectorAll('.experience-card');
+    if (!cards.length) return;
+
+    const revealCard = (card: Element) => card.classList.add('is-visible');
+    if (!('IntersectionObserver' in window)) {
+        cards.forEach(revealCard);
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            revealCard(entry.target);
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.15 });
+
+    cards.forEach(card => observer.observe(card));
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     renderProjects();
     renderExperience();
     setupDarkMode();
+    setupExperienceTimeline();
+    setupExperienceCards();
+
+    initPCB();
+    if (isHomepage()) initLidar();
 
     const menuBtn = document.getElementById('menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
