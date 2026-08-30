@@ -27,8 +27,9 @@ function initPCB() {
 
     const nodes = [];
     const connections = [];
+    const nodeCount = window.matchMedia("(max-width: 767px)").matches ? 32 : 100;
 
-    for(let i = 0; i < 100; i++){
+    for(let i = 0; i < nodeCount; i++){
 
         nodes.push({
             x: Math.random() * width,
