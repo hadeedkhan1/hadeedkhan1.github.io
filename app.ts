@@ -19,7 +19,8 @@ declare function initPCB(): void;
 declare function initLidar(): void;
 
 const projects: Project[] = [
-        {
+       
+    {
         id: "emotionware",
         title: "Emotionware",
         description: "Real-time computer vision system that detects and classifies emotions using camera input and Presage machine learning. Sends data to custom wearable device.",
@@ -95,7 +96,7 @@ const projects: Project[] = [
         id: "bldc",
         title: "BLDC",
         description: "Designed and built a custom motor controller PCB that can drive brushless motors with precision torque control over CAN bus.",
-        tags: ["KiCad", "Field-Oriented Control", "Power Electronics"],
+        tags: ["KiCad", "Field-Oriented Control", "Power Electronics", "STM32"],
         categories: ["Embedded Systems + Hardware"],
         link: "#"
     },
@@ -171,7 +172,7 @@ const experience: Project[] = [
 ];
 
 ///////
-const featuredProjectIds = ["emotionware", "bandit-model", "mathwise", "food-match"];
+const featuredProjectIds = ["emotionware", "bandit-model", "mathwise", "food-match", "bldc"];
 const featuredExperienceIds = ["capsher", "turtles-robotics", "city-of-austin-dell", "reliablyme", "academix-tutors"];
 const projectCategories: Array<ProjectCategory | "All"> = [
     "All",
